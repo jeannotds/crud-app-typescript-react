@@ -12,6 +12,13 @@ export const Home = () => {
     setShowList(PageList.add);
   };
 
+  const showListPage = () => {
+    setShowList(PageList.list);
+  };
+  const addEmplyee = (data: Employee) => {
+    setEmployee([...employee, data]);
+  };
+
   return (
     <>
       <article className="article-header">
@@ -30,7 +37,12 @@ export const Home = () => {
             <EmplyeeList list={employee} />
           </>
         )}
-        {showList === PageList.add && <AddEmployee></AddEmployee>}
+        {showList === PageList.add && (
+          <AddEmployee
+            onBackBtnClick={showListPage}
+            SubmitHandler={addEmplyee}
+          ></AddEmployee>
+        )}
       </section>
     </>
   );
