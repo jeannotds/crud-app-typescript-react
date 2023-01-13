@@ -11,7 +11,6 @@ export const EmplyeeList = (props: props) => {
   const { list } = props;
   return (
     <div>
-      This is employee list page
       <table className="tableList">
         <tbody>
           <tr>
@@ -24,7 +23,11 @@ export const EmplyeeList = (props: props) => {
               <tr key={emplyee.id}>
                 <td>{`${emplyee.firstname} ${emplyee.lastname}`}</td>
                 <td>{emplyee.email}</td>
-                <td>Actions</td>
+                <td>
+                  <input type="button" value="View" />
+                  <input type="button" value="Edit" />
+                  <input type="button" value="Delete" />
+                </td>
               </tr>
             );
           })}

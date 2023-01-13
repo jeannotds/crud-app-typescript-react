@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import "../styles/Home.css";
-import { Employee, employeeList } from "./Employee.type";
+import { AddEmployee } from "./AddEmployee";
+import { Employee, employeeList, PageList } from "./Employee.type";
 import { EmplyeeList } from "./EmplyeeList";
 
 export const Home = () => {
   const [employee, setEmployee] = useState(employeeList as Employee[]);
-  console.log(employee);
+  const [showList, setShowList] = useState(PageList.list);
+
+  const onAddEmployeeClick = () => {
+    setShowList(PageList.add);
+  };
 
   return (
     <>
@@ -15,8 +20,17 @@ export const Home = () => {
         </header>
       </article>
       <section className="section-content">
-        <div>This content part</div>
-        <EmplyeeList list={employee} />
+        {showList === PageList.list && (
+          <>
+            <input
+              type="submit"
+              value="add Employee"
+              onClick={onAddEmployeeClick}
+            />
+            <EmplyeeList list={employee} />
+          </>
+        )}
+        {showList === PageList.add && <AddEmployee></AddEmployee>}
       </section>
     </>
   );
