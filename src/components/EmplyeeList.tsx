@@ -1,4 +1,4 @@
-import { type } from "@testing-library/user-event/dist/type";
+
 import React from "react";
 import "../styles/EmployeeList.css";
 import { Employee } from "./Employee.type";

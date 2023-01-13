@@ -5,12 +5,7 @@ export interface Employee {
     email: string
 }
 
-export const employeeList : Employee[] = [{
-    id: new Date().toJSON().toString(),
-    firstname: "Jeannot",
-    lastname: "DIAMBU",
-    email: "jean@gmail.om"
-},]
+export const employeeList : Employee[] = []
 
 export enum PageList {
     list,
